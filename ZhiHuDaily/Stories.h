@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Story : NSObject
+@interface Stories : NSObject
 
 @property(nonatomic, copy) NSString *gaPrefix;
 

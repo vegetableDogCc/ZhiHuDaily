@@ -7,7 +7,7 @@
 
 #import "Stories.h"
 
-@implementation Story
+@implementation Stories
 
 - (instancetype)initWithDictionary:(NSDictionary *)dic {
     self = [super init];

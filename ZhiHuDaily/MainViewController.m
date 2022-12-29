@@ -8,11 +8,11 @@
 #import "MainViewController.h"
 #import <Masonry.h>
 #import "UIView+Frame.h"
-#import "HttpRequest.h"
+#import "SectionModel.h"
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT UIScreen mainScreen].bounds.size.height
 
-@interface ViewController ()
+@interface MainViewController ()
 
 //日期文本框
 @property(nonatomic, strong) UILabel *dateLab;
@@ -28,7 +28,7 @@
 
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -124,11 +124,7 @@
 }
 
 - (void)testdata {
-    [[HttpRequest sharedTool] requestLatest:^(id  _Nonnull responseObject) {
-        NSLog(@"请求成功");
-        } failure:^(NSError * _Nonnull error) {
-            NSLog(@"请求失败");
-        }];
+    [SectionModel requestLatest];
 }
 
 @end

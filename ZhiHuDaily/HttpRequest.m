@@ -51,12 +51,17 @@ static id _instance = nil; //nil自加
 
 #pragma mark - GET请求
 
-//最新新闻
-- (void)requestLatest:(void (^)(id _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
-    [self.manager GET:@"news/latest" parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@",responseObject);
+- (void)getWithURLString:(NSString *)urlString
+                 success:(void (^)(id _Nonnull))success
+                 failure:(void (^)(NSError * _Nonnull))failure {
+    [self.manager GET:urlString parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (success) {
+            success(responseObject);
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        if (failure) {
+            failure(error);
+        }
     }];
 }
 

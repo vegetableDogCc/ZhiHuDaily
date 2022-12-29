@@ -14,10 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedTool;
 
-//声明一个名为requestLatest的方法，有两个分别叫success和error的block参数
-- (void)requestLatest:(void (^)(id responseObject))success
-              failure:(void (^)(NSError *error))failure;
-
+- (void)getWithURLString:(NSString *)urlString
+                 success:(void (^)(id responseObject))success
+                 failure:(void (^)(NSError *error))failure;
 
 @end
 
