@@ -20,6 +20,7 @@ static id _instance = nil; //nil自加
 
 //重写allocWithZone:方法
 + (instancetype)allocWithZone:(struct _NSZone *)zone {
+    //使用dispatch_once方法能保证某段代码在程序运行过程中只被执行1次，并且即使在多线程的环境下，dispatch_once也可以保证线程安全。用在这里就是只创建一次manager，不会创建不用的manager
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         //调用父类allocWithZone:方法来创建对象
@@ -46,6 +47,17 @@ static id _instance = nil; //nil自加
         //AFHTTPRequestSerializer
     }
     return self;
+}
+
+#pragma mark - GET请求
+
+//最新新闻
+- (void)requestLatest:(void (^)(id _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
+    [self.manager GET:@"news/latest" parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
 }
 
 @end

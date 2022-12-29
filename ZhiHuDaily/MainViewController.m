@@ -8,6 +8,7 @@
 #import "MainViewController.h"
 #import <Masonry.h>
 #import "UIView+Frame.h"
+#import "HttpRequest.h"
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT UIScreen mainScreen].bounds.size.height
 
@@ -36,6 +37,8 @@
     [self.view addSubview:self.monthLab];
     [self.view addSubview:self.verticalLine];
     [self.view addSubview:self.welcomeLab];
+    
+    [self testdata];
 }
 
 #pragma mark - Getter
@@ -120,6 +123,12 @@
   return _welcomeLab;
 }
 
-
+- (void)testdata {
+    [[HttpRequest sharedTool] requestLatest:^(id  _Nonnull responseObject) {
+        NSLog(@"请求成功");
+        } failure:^(NSError * _Nonnull error) {
+            NSLog(@"请求失败");
+        }];
+}
 
 @end
