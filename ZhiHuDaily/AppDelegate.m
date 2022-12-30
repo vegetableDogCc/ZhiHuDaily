@@ -22,7 +22,7 @@
     //设置UIWindow的背景颜色
     self.window.backgroundColor = [UIColor whiteColor];
     //创建homeVC
-    ViewController *homeVC = [[ViewController alloc] init];
+    MainViewController *homeVC = [[MainViewController alloc] init];
     //设置rootViewController
     self.window.rootViewController = homeVC;
     //让window成为keyWindow(主窗口),并且可见

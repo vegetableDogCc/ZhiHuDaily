@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedTool;
 
 - (void)getWithURLString:(NSString *)urlString
+              parameters:(id __nullable)parameters
                  success:(void (^)(id responseObject))success
                  failure:(void (^)(NSError *error))failure;
 
