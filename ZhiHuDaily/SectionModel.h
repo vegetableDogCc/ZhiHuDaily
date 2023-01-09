@@ -11,6 +11,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NSString *SectionModelStoryPlace NS_STRING_ENUM;
+
+///新闻在banner内展示
+FOUNDATION_EXPORT SectionModelStoryPlace const SectionModelStoryPlaceBanner;
+///新闻的位置在banner以下
+FOUNDATION_EXPORT SectionModelStoryPlace const SectionModelStoryPlaceBottom;
+
 @interface SectionModel : NSObject
 
 @property(nonatomic, copy) NSString *date;
@@ -18,7 +25,12 @@ NS_ASSUME_NONNULL_BEGIN
 //创建返回Stories对象的属性
 @property(nonatomic, strong) NSArray <Stories *> *storyAry;
 
-+ (void)requestLatest;
++ (void)requestLatestSuccess:(void (^)(SectionModel *model, SectionModelStoryPlace storyPlace))success
+                     failure:(void (^)(NSError *error))failure;
+
++ (void)requestWithDate:(NSString *)str
+                success:(void (^)(SectionModel *model))success
+                failure:(void (^)(NSError *error))failure;
 
 @end
 

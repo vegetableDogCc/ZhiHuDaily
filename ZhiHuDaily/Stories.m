@@ -18,8 +18,16 @@
         self.hint = dic[@"hint"];
         self.identifier = [dic[@"id"] longValue];
         self.imageHue = dic[@"image_hue"];
-        //dic[@"images"]是否存在? 如果存在,self.imageUrl=dic[@"images"][0],否则self.imageUrl=@""
-        self.imageUrl = dic[@"images"] ? dic[@"images"][0] : @"";
+        //self.imageUrl = dic[@"images"] ? dic[@"images"][0] : @"";
+        if (dic[@"images"]) {
+            self.imageUrl = dic[@"images"][0];
+        }
+        else if (dic[@"image"]) {
+            self.imageUrl = dic[@"image"];
+        }
+        else {
+            self.imageUrl = @"";
+        }
         self.title = dic[@"title"];
         self.type = [dic[@"type"] longValue];
         self.url = dic[@"url"];

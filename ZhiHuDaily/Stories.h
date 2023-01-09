@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Stories : NSObject
 
+//供GoogleAnalytics使用
 @property(nonatomic, copy) NSString *gaPrefix;
 
 //作者及阅读时间
@@ -19,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 //唯一标识符
 @property(nonatomic) NSInteger identifier;
 
+//用于动画，颜色渲染
 @property(nonatomic, strong)NSString *imageHue;
 
 //图片URL
