@@ -12,13 +12,10 @@
 
 //日期文本框
 @property(nonatomic, strong) UILabel *dateLab;
-
 //月份文本框
 @property(nonatomic, strong) UILabel *monthLab;
-
 //竖直分割线
 @property(nonatomic, strong) UIView *verticalLine;
-
 //欢迎文本框
 @property(nonatomic, strong) UILabel *welcomeLab;
 
@@ -39,12 +36,11 @@
 
 #pragma mark - Lazy
 
-//设置日期文本框
 - (UILabel *)dateLab {
     if (_dateLab == nil) {
         //获取当前时间点
         NSDate *dateNow = [NSDate date];
-        //把NSDate按formatter格式转成NSString
+        //把NSDate转成特定格式的NSString
         NSDateFormatter *formatterDate = [[NSDateFormatter alloc] init];
         formatterDate.dateFormat = @"d";
         NSString *dateStr = [formatterDate stringFromDate:dateNow];
@@ -56,12 +52,11 @@
   return _dateLab;
 }
 
-//设置月份文本框
 - (UILabel *)monthLab {
     if (_monthLab == nil) {
         //获取当前时间点
         NSDate *dateNow = [NSDate date];
-        //把NSDate按formatter格式转成NSString
+        //把NSDate转成特定格式的NSString
         NSDateFormatter *formatterMonth = [[NSDateFormatter alloc] init];
         formatterMonth.dateFormat = @"M月";
         NSString *monthStr = [formatterMonth stringFromDate:dateNow];
@@ -80,7 +75,6 @@
   return _monthLab;
 }
 
-//设置竖直分割线
 - (UIView *)verticalLine {
     if (_verticalLine == nil) {
         _verticalLine = [[UIView alloc] initWithFrame:CGRectMake(_dateLab.right, _dateLab.top, 1, _dateLab.height + _monthLab.height)];
@@ -89,7 +83,6 @@
     return _verticalLine;
 }
 
-//设置欢迎文本框
 - (UILabel *)welcomeLab {
     if (_welcomeLab == nil) {
         _welcomeLab = [[UILabel alloc] initWithFrame:CGRectMake(_verticalLine.right + 11, _verticalLine.top, 200, _verticalLine.height)];
@@ -100,13 +93,13 @@
         formattetTime.dateFormat = @"H";
         NSString *strTime = [formattetTime stringFromDate:dateNow];
         int time = [strTime intValue];
-        if (time >= 5 && time < 9) {
+        if (time >= 6 && time < 9) {
             _welcomeLab.text = @"早上好!";
         }
         else if (time >= 18 && time < 23) {
             _welcomeLab.text = @"晚上好!";
         }
-        else if (time >= 23 || time <= 5) {
+        else if (time >= 23 || time <= 2) {
             _welcomeLab.text = @"早点休息";
         }
         else {

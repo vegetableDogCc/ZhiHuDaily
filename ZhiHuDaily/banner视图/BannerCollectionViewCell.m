@@ -34,12 +34,13 @@ NSString *BannerCollectionViewCellReuseIdentifier = @"BannerCollectionViewCell";
 
 - (void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes {
     self.imgView.frame = CGRectMake(0, 0, layoutAttributes.size.width, layoutAttributes.size.height);
-    self.titleLab.frame = CGRectMake(0, 0, 0, 0);
     self.authorLab.frame = CGRectMake(20, layoutAttributes.size.height - 50, 300, 35);
+    
+    self.titleLab.frame = CGRectMake(0, 0, 0, 0);
     [self.contentView addSubview:self.titleLab];
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.authorLab.mas_top);
-        make.left.equalTo(self.authorLab);
+        make.left.equalTo(self.authorLab.mas_left);
         make.width.mas_equalTo(320);
     }];
 }
@@ -49,6 +50,8 @@ NSString *BannerCollectionViewCellReuseIdentifier = @"BannerCollectionViewCell";
 - (UIImageView *)imgView {
     if (_imgView == nil) {
         _imgView = [[UIImageView alloc] init];
+        
+        _imgView.backgroundColor = [UIColor brownColor];
     }
     return _imgView;
 }
@@ -74,9 +77,9 @@ NSString *BannerCollectionViewCellReuseIdentifier = @"BannerCollectionViewCell";
 
 #pragma mark - Setter
 
-- (void)setData:(NSData *)data {
-    _data = data.copy;
-    self.imgView.image = [UIImage imageWithData:data];
+- (void)setImgData:(NSData *)imgData {
+    _imgData = imgData.copy;
+    self.imgView.image = [UIImage imageWithData:imgData];
 }
 
 - (void)setTitle:(NSString *)title {

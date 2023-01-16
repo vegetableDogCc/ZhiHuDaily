@@ -5,7 +5,7 @@
 //  Created by coin on 2022/12/24.
 //
 
-//将网络请求的结果转为模型
+//进行网络请求
 #import <Foundation/Foundation.h>
 #import "Stories.h"
 
@@ -20,9 +20,9 @@ FOUNDATION_EXPORT SectionModelStoryPlace const SectionModelStoryPlaceBottom;
 
 @interface SectionModel : NSObject
 
+//请求到的日期数据
 @property(nonatomic, copy) NSString *date;
-
-//创建返回Stories对象的属性
+//除日期以外的其他数据
 @property(nonatomic, strong) NSArray <Stories *> *storyAry;
 
 + (void)requestLatestSuccess:(void (^)(SectionModel *model, SectionModelStoryPlace storyPlace))success
