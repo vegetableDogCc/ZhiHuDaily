@@ -7,16 +7,16 @@
 
 #import "MainViewController.h"
 
-#import <Masonry.h>
+#import "DetailViewController.h"
 
-#import "TopView.h"
+#import <Masonry.h>
 
 #import "SectionModel.h"
 
-#import "BannerCollectionViewCell.h"
-
-#import "BottomTableViewCell.h"
-#import "BottomTableViewHeaderView.h"
+#import "MainTopView.h"
+#import "MainBannerCollectionViewCell.h"
+#import "MainBottomTableViewCell.h"
+#import "MainBottomTableViewHeaderView.h"
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -83,11 +83,12 @@
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    BannerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:BannerCollectionViewCellReuseIdentifier forIndexPath:indexPath];
+    MainBannerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MainBannerCollectionViewCellReuseIdentifier forIndexPath:indexPath];
 
     cell.title = self.topDataArray[indexPath.item].title;
     cell.author = self.topDataArray[indexPath.item].hint;
-    cell.imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.topDataArray[indexPath.item].imageUrl]];
+    NSURL *url = [NSURL URLWithString:self.topDataArray[indexPath.item].imageUrl];
+    cell.imgData = [NSData dataWithContentsOfURL:url];
     
     return cell;
 }
@@ -95,7 +96,10 @@
 #pragma mark - <UICollectionViewDelegate>
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"单击了图片");
+    //点击item进入详情页
+    DetailViewController *detailVC = [[DetailViewController alloc] init];
+    detailVC.identifier = self.topDataArray[indexPath.item].identifier;
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 #pragma mark - <UICollectionViewDelegateFlowLayout>
@@ -115,11 +119,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BottomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BottomTableViewCellReuseIdentifier forIndexPath:indexPath];
+    MainBottomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MainBottomTableViewCellReuseIdentifier forIndexPath:indexPath];
     
     cell.title = self.dataArray[indexPath.row + indexPath.section * 6].title;
     cell.author = self.dataArray[indexPath.row + indexPath.section * 6].hint;
-    cell.imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.dataArray[indexPath.row + indexPath.section * 6].imageUrl]];
+    NSURL *url = [NSURL URLWithString:self.dataArray[indexPath.row + indexPath.section * 6].imageUrl];
+    cell.imgData = [NSData dataWithContentsOfURL:url];
 
     return cell;
 }
@@ -127,7 +132,6 @@
 #pragma mark - <UITableViewDelegate>
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    
     if (section == 0) {
         return 0;
     }
@@ -145,9 +149,9 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    BottomTableViewHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:BottomTableViewCellReuseIdentifier];
+    MainBottomTableViewHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:MainBottomTableViewCellReuseIdentifier];
     if (headerView == nil) {
-        headerView = [[BottomTableViewHeaderView alloc] initWithReuseIdentifier:BottomTableViewCellReuseIdentifier];
+        headerView = [[MainBottomTableViewHeaderView alloc] initWithReuseIdentifier:MainBottomTableViewCellReuseIdentifier];
     }
     headerView.date = self.timeArray[section - 1];
     
@@ -180,16 +184,23 @@
             [self.timeArray addObject:str];
             
         } failure:^(NSError * _Nonnull error) {
-            NSLog(@"error");
+            NSLog(@"%@",error);
         }];
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //点击row进入详情页
+    DetailViewController *detailVC = [[DetailViewController alloc] init];
+    detailVC.identifier = self.dataArray[indexPath.row + indexPath.section * 6].identifier;
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 #pragma mark - Lazy
 
 - (UIView *)topView {
     if (_topView == nil) {
-        _topView = [[TopView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        _topView = [[MainTopView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
         [self.view addSubview:_topView];
         [_topView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
@@ -216,7 +227,7 @@
         _collectionView.pagingEnabled = YES;
         _collectionView.showsHorizontalScrollIndicator = NO;
         
-        [_collectionView registerClass:BannerCollectionViewCell.class forCellWithReuseIdentifier:BannerCollectionViewCellReuseIdentifier];
+        [_collectionView registerClass:MainBannerCollectionViewCell.class forCellWithReuseIdentifier:MainBannerCollectionViewCellReuseIdentifier];
     }
     return _collectionView;
 }
@@ -245,8 +256,8 @@
         _tableView.estimatedSectionFooterHeight = 0;
         _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
 
-        [_tableView registerClass:BottomTableViewCell.class forCellReuseIdentifier:BottomTableViewCellReuseIdentifier];
-        [_tableView registerClass:BottomTableViewHeaderView.class forHeaderFooterViewReuseIdentifier:BottomTableViewHeaderViewReuseIdentifier];
+        [_tableView registerClass:MainBottomTableViewCell.class forCellReuseIdentifier:MainBottomTableViewCellReuseIdentifier];
+        [_tableView registerClass:MainBottomTableViewHeaderView.class forHeaderFooterViewReuseIdentifier:MainBottomTableViewHeaderViewReuseIdentifier];
     }
     return _tableView;
 }

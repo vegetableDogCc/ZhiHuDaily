@@ -6,6 +6,7 @@
 //
 
 #import "SectionModel.h"
+
 #import "HttpRequest.h"
 
 SectionModelStoryPlace const SectionModelStoryPlaceBanner = @"top_stories";
@@ -57,6 +58,57 @@ SectionModelStoryPlace const SectionModelStoryPlaceBottom = @"stories";
         SectionModel *bottomModel = [self place:SectionModelStoryPlaceBottom obj:responseObject];
         if (success) {
             success(bottomModel);
+        }
+        
+    } failure:^(NSError * _Nonnull error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+//新闻内容
++ (void)requeatWithId:(long)identifier success:(void (^)(SectionModel * _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
+    
+    NSString *string = [NSString stringWithFormat:@"news/%ld", identifier];
+    [[HttpRequest sharedTool] getWithURLString:string parameters:nil success:^(id  _Nonnull responseObject) {
+        
+        NSMutableArray *ary = [NSMutableArray array];
+        //将字典中的元素赋值给storyContent对象相对应的属性,后将对象添加到可变数组中
+        StoriesContent *storyContent = [[StoriesContent alloc] initWithDictionary:responseObject];
+        [ary addObject:storyContent];
+
+        SectionModel *ContentModel = [[SectionModel alloc] init];
+        //把创建的可变数组赋值给model的storyAry
+        ContentModel.storyContentAry = ary;
+        
+        if (success) {
+            success(ContentModel);
+        }
+        
+    } failure:^(NSError * _Nonnull error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+//互动情况
++ (void)requestInteractionWithId:(long)identifier success:(void (^)(SectionModel * _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
+    NSString *string = [NSString stringWithFormat:@"story-extra/%ld", identifier];
+    [[HttpRequest sharedTool] getWithURLString:string parameters:nil success:^(id  _Nonnull responseObject) {
+        
+        NSMutableArray *ary = [NSMutableArray array];
+        //将字典中的元素赋值给storyContent对象相对应的属性,后将对象添加到可变数组中
+        InteractionNumber *interactionNumber = [[InteractionNumber alloc] initWithDictionary:responseObject];
+        [ary addObject:interactionNumber];
+        
+        SectionModel *interactionModel = [[SectionModel alloc] init];
+        //把创建的可变数组赋值给model的storyAry
+        interactionModel.interactionAry = ary;
+        
+        if (success) {
+            success(interactionModel);
         }
         
     } failure:^(NSError * _Nonnull error) {

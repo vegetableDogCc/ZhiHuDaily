@@ -5,12 +5,13 @@
 //  Created by coin on 2023/1/9.
 //
 
-#import "BottomTableViewHeaderView.h"
+#import "MainBottomTableViewHeaderView.h"
+
 #import <Masonry.h>
 
-NSString *BottomTableViewHeaderViewReuseIdentifier = @"BottomTableViewHeaderView";
+NSString *MainBottomTableViewHeaderViewReuseIdentifier = @"MainBottomTableViewHeaderView";
 
-@interface BottomTableViewHeaderView ()
+@interface MainBottomTableViewHeaderView ()
 
 //日期文本框
 @property(nonatomic, strong) UILabel *dateLab;
@@ -19,7 +20,7 @@ NSString *BottomTableViewHeaderViewReuseIdentifier = @"BottomTableViewHeaderView
 
 @end
 
-@implementation BottomTableViewHeaderView
+@implementation MainBottomTableViewHeaderView
 
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithReuseIdentifier:reuseIdentifier];

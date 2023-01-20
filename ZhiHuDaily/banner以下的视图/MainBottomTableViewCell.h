@@ -1,8 +1,8 @@
 //
-//  BannerCollectionViewCell.h
+//  BottomTableViewCell.h
 //  ZhiHuDaily
 //
-//  Created by coin on 2023/1/1.
+//  Created by coin on 2023/1/9.
 //
 
 #import <UIKit/UIKit.h>
@@ -10,9 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 ///复用标志
-UIKIT_EXTERN NSString *BannerCollectionViewCellReuseIdentifier;
+UIKIT_EXTERN NSString *MainBottomTableViewCellReuseIdentifier;
 
-@interface BannerCollectionViewCell : UICollectionViewCell
+@interface MainBottomTableViewCell : UITableViewCell
 
 @property(nonatomic, copy) NSData *imgData;
 

@@ -5,10 +5,11 @@
 //  Created by coin on 2023/1/2.
 //
 
-#import "TopView.h"
+#import "MainTopView.h"
+
 #import "UIView+Frame.h"
 
-@interface TopView ()
+@interface MainTopView ()
 
 //日期文本框
 @property(nonatomic, strong) UILabel *dateLab;
@@ -21,7 +22,7 @@
 
 @end
 
-@implementation TopView
+@implementation MainTopView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

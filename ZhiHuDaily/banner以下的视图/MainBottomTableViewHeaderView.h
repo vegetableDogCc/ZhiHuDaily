@@ -10,9 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 ///复用标志
-UIKIT_EXTERN NSString *BottomTableViewHeaderViewReuseIdentifier;
+UIKIT_EXTERN NSString *MainBottomTableViewHeaderViewReuseIdentifier;
 
-@interface BottomTableViewHeaderView : UITableViewHeaderFooterView
+@interface MainBottomTableViewHeaderView : UITableViewHeaderFooterView
 
 @property(nonatomic, copy) NSString *date;
 

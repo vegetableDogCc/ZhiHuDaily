@@ -5,7 +5,7 @@
 //  Created by coin on 2022/12/28.
 //
 
-//字典转模型
+//新闻字典转模型
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 //作者及阅读时间
 @property(nonatomic, copy) NSString *hint;
 //唯一标识符
-@property(nonatomic) NSInteger identifier;
+@property(nonatomic) long identifier;
 //用于动画，颜色渲染
 @property(nonatomic, strong)NSString *imageHue;
 //图片URL
@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 //文章URL
 @property(nonatomic, copy) NSString *url;
 
-@property(nonatomic) NSInteger type;
+@property(nonatomic) long type;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dic;
 

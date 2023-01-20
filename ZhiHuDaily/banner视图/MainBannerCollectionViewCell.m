@@ -1,16 +1,17 @@
 //
-//  BottomTableViewCell.m
+//  BannerCollectionViewCell.m
 //  ZhiHuDaily
 //
-//  Created by coin on 2023/1/9.
+//  Created by coin on 2023/1/1.
 //
 
-#import "BottomTableViewCell.h"
+#import "MainBannerCollectionViewCell.h"
+
 #import <Masonry.h>
 
-NSString *BottomTableViewCellReuseIdentifier = @"BottomTableViewCell";
+NSString *MainBannerCollectionViewCellReuseIdentifier = @"MainBannerCollectionViewCell";
 
-@interface BottomTableViewCell ()
+@interface MainBannerCollectionViewCell ()
 
 @property(nonatomic, strong) UIImageView *imgView;
 
@@ -20,10 +21,10 @@ NSString *BottomTableViewCellReuseIdentifier = @"BottomTableViewCell";
 
 @end
 
-@implementation BottomTableViewCell
+@implementation MainBannerCollectionViewCell
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
     if (self) {
         [self.contentView addSubview:self.imgView];
         [self.contentView addSubview:self.titleLab];
@@ -32,30 +33,16 @@ NSString *BottomTableViewCellReuseIdentifier = @"BottomTableViewCell";
     return self;
 }
 
-- (void)layoutIfNeeded {
-    self.imgView.frame = CGRectMake(0, 0, 0, 0);
-    [self.contentView addSubview:self.imgView];
-    [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(15);
-        make.height.mas_equalTo(70);
-        make.right.mas_equalTo(-15);
-        make.width.mas_equalTo(70);
-    }];
+- (void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes {
+    self.imgView.frame = CGRectMake(0, 0, layoutAttributes.size.width, layoutAttributes.size.height);
+    self.authorLab.frame = CGRectMake(20, layoutAttributes.size.height - 50, 300, 35);
     
     self.titleLab.frame = CGRectMake(0, 0, 0, 0);
     [self.contentView addSubview:self.titleLab];
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(24);
-        make.left.mas_equalTo(15);
-        make.width.mas_equalTo(275);
-    }];
-    
-    self.authorLab.frame = CGRectMake(0, 0, 0, 0);
-    [self.contentView addSubview:self.authorLab];
-    [self.authorLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleLab.mas_bottom).offset(4);
-        make.left.equalTo(self.titleLab.mas_left);
-        make.width.equalTo(self.titleLab.mas_width);
+        make.bottom.equalTo(self.authorLab.mas_top);
+        make.left.equalTo(self.authorLab.mas_left);
+        make.width.mas_equalTo(320);
     }];
 }
 
@@ -71,8 +58,9 @@ NSString *BottomTableViewCellReuseIdentifier = @"BottomTableViewCell";
 - (UILabel *)titleLab {
     if (_titleLab == nil) {
         _titleLab = [[UILabel alloc] init];
-        _titleLab.font = [UIFont boldSystemFontOfSize:15.5];
-        _titleLab.numberOfLines = 2;
+        _titleLab.font = [UIFont boldSystemFontOfSize:20];
+        _titleLab.textColor = [UIColor whiteColor];
+        _titleLab.numberOfLines = 0;
     }
     return _titleLab;
 }
@@ -81,7 +69,7 @@ NSString *BottomTableViewCellReuseIdentifier = @"BottomTableViewCell";
     if (_authorLab == nil) {
         _authorLab = [[UILabel alloc] init];
         _authorLab.font = [UIFont systemFontOfSize:13];
-        _authorLab.textColor = [UIColor grayColor];
+        _authorLab.textColor = [UIColor whiteColor];
     }
     return _authorLab;
 }
