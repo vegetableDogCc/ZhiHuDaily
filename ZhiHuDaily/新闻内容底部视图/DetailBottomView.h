@@ -11,10 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailBottomView : UIView
 
-//评论数
-@property(nonatomic) long CommentCount;
-//点赞数
-@property(nonatomic) long likesCount;
+@property(nonatomic) long CommentCount; //评论数
+@property(nonatomic) long likesCount; //点赞数
 
 @end
 

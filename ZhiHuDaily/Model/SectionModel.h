@@ -23,7 +23,7 @@ FOUNDATION_EXPORT SectionModelStoryPlace const SectionModelStoryPlaceBottom;
 
 @interface SectionModel : NSObject
 
-//请求到的最新新闻及过往新闻的日期数据
+//最新新闻及过往新闻的日期
 @property(nonatomic, copy) NSString *date;
 //最新新闻及过往新闻除日期以外的其他数据
 @property(nonatomic, strong) NSArray <Stories *> *storyAry;
@@ -31,7 +31,6 @@ FOUNDATION_EXPORT SectionModelStoryPlace const SectionModelStoryPlaceBottom;
 @property(nonatomic, strong) NSArray <StoriesContent *> *storyContentAry;
 //请求到的文章互动情况的数据
 @property(nonatomic, strong) NSArray <InteractionNumber *> *interactionAry;
-
 
 + (void)requestLatestSuccess:(void (^)(SectionModel *model, SectionModelStoryPlace storyPlace))success
                      failure:(void (^)(NSError *error))failure;

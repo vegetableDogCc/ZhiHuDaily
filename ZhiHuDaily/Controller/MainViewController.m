@@ -32,14 +32,11 @@
 @property(nonatomic, strong) UICollectionView *collectionView;
 @property(nonatomic, strong) UITableView *tableView;
 
-//暂时存放请求到的model中的date
-@property(nonatomic, copy) NSString *latestDate;
-//存放每个latestDate
-@property(nonatomic, strong) NSMutableArray <NSString *> *timeArray;
-//存放顶部视图数据
-@property(nonatomic, strong) NSArray <Stories *> *topDataArray;
-//存放tableView视图数据
-@property(nonatomic, strong) NSMutableArray <Stories *> *dataArray;
+
+@property(nonatomic, copy) NSString *latestDate; //请求到的model中的date
+@property(nonatomic, strong) NSMutableArray <NSString *> *timeArray; //存放每个latestDate
+@property(nonatomic, strong) NSArray <Stories *> *topDataArray; //存放顶部视图数据
+@property(nonatomic, strong) NSMutableArray <Stories *> *dataArray; //存放tableView视图数据
 
 @end
 

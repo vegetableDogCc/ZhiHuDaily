@@ -14,9 +14,7 @@ NSString *MainBannerCollectionViewCellReuseIdentifier = @"MainBannerCollectionVi
 @interface MainBannerCollectionViewCell ()
 
 @property(nonatomic, strong) UIImageView *imgView;
-
 @property(nonatomic, strong) UILabel *titleLab;
-
 @property(nonatomic, strong) UILabel *authorLab;
 
 @end

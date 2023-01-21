@@ -11,14 +11,10 @@
 
 @interface MainTopView ()
 
-//日期文本框
-@property(nonatomic, strong) UILabel *dateLab;
-//月份文本框
-@property(nonatomic, strong) UILabel *monthLab;
-//竖直分割线
-@property(nonatomic, strong) UIView *verticalLine;
-//欢迎文本框
-@property(nonatomic, strong) UILabel *welcomeLab;
+@property(nonatomic, strong) UILabel *dateLab; //日期文本框
+@property(nonatomic, strong) UILabel *monthLab; //月份文本
+@property(nonatomic, strong) UIView *verticalLine; //竖直分割线
+@property(nonatomic, strong) UILabel *welcomeLab; //欢迎文本框
 
 @end
 

@@ -12,14 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface InteractionNumber : NSObject
 
-//长评论数
-@property(nonatomic) long longComments;
-//点赞数
-@property(nonatomic) long popularity;
-//短评数
-@property(nonatomic) long shortComments;
-//评论总数
-@property(nonatomic) long comments;
+@property(nonatomic) long longComments; //长评论数
+@property(nonatomic) long popularity; //点赞数
+@property(nonatomic) long shortComments; //短评数
+@property(nonatomic) long comments; //评论总数
 
 - (instancetype)initWithDictionary:(NSDictionary *)dic;
 

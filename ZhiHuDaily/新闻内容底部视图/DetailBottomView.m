@@ -9,29 +9,22 @@
 
 #import "UIView+Frame.h"
 
+#import "MainViewController.h"
+
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 @interface DetailBottomView ()
 
-//底部的工具栏
-@property(nonatomic, strong) UIToolbar *toolBar;
-//返回主页按钮
-@property(nonatomic, strong) UIButton *returnButton;
-//竖直分割线
-@property(nonatomic, strong) UIView *verticalLine;
-//评论按钮
-@property(nonatomic, strong) UIButton *commentButton;
-//评论数文本框
-@property(nonatomic, strong) UILabel *commentLab;
-//点赞按钮
-@property(nonatomic, strong) UIButton *likesButton;
-//点赞数文本框
-@property(nonatomic, strong) UILabel *likesLab;
-//收藏按钮
-@property(nonatomic, strong) UIButton *collectionButton;
-//分享按钮
-@property(nonatomic, strong) UIButton *shareButton;
+@property(nonatomic, strong) UIToolbar *toolBar; //底部的工具栏
+@property(nonatomic, strong) UIButton *returnButton; //返回主页按钮
+@property(nonatomic, strong) UIView *verticalLine; //竖直分割线
+@property(nonatomic, strong) UIButton *commentButton; //评论按钮
+@property(nonatomic, strong) UILabel *commentLab; //评论数文本框
+@property(nonatomic, strong) UIButton *likesButton; //点赞按钮
+@property(nonatomic, strong) UILabel *likesLab; //点赞数文本框
+@property(nonatomic, strong) UIButton *collectionButton; //收藏按钮
+@property(nonatomic, strong) UIButton *shareButton; //分享按钮
 
 @end
 
@@ -55,14 +48,67 @@
 
 #pragma mark - Method
 
-//点击时改变点赞按钮选中状态
-- (void)checkLikesButtonClick {
-    _likesButton.selected = !_likesButton.selected;
+- (void)clickLikesButton {
+    //点击时改变按钮选中状态
+    self.likesButton.selected =! self.likesButton.selected;
+    //设置弹出视图
+    UIView *view = [[UIView alloc] init];
+    view.layer.cornerRadius = 8;
+    view.layer.masksToBounds = YES;
+    //实现弹出方法
+    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
+    window.windowLevel = UIWindowLevelNormal;
+    
+    if ([self.likesButton isSelected]) {
+        //显示已点赞
+        view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"已点赞"]];
+        view.frame = CGRectMake((SCREEN_WIDTH - 80) / 2, (SCREEN_HEIGHT - 70) / 2, 80, 70);
+        //点赞数加一
+        long number = [self.likesLab.text longLongValue];
+        number += 1;
+        self.likesLab.text = [NSString stringWithFormat:@"%ld", number];
+    }
+    else {
+        //显示取消点赞
+        view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"已取消点赞"]];
+        view.frame = CGRectMake((SCREEN_WIDTH - 100) / 2, (SCREEN_HEIGHT - 70) / 2, 100, 70);
+        //点赞数减一
+        long number = [self.likesLab.text longLongValue];
+        number -= 1;
+        self.likesLab.text = [NSString stringWithFormat:@"%ld", number];
+    }
+    [self.window addSubview:view];
+    //视图逐渐消失
+    [UIView animateWithDuration:3.0f animations:^{
+        view.alpha = 0.0f;
+    }];
 }
 
-//点击时改变收藏按钮选中状态
-- (void)checkCollectionButtonClick {
-    _collectionButton.selected = !_collectionButton.selected;
+- (void)clickCollectionButton {
+    //点击时改变按钮选中状态
+    self.collectionButton.selected =! self.collectionButton.selected;
+    //设置弹出视图
+    UIView *view = [[UIView alloc] init];
+    view.layer.cornerRadius = 8;
+    view.layer.masksToBounds = YES;
+    //实现弹出方法
+    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
+    window.windowLevel = UIWindowLevelNormal;
+    //显示已收藏
+    if ([self.collectionButton isSelected]) {
+        view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"已收藏"]];
+        view.frame = CGRectMake((SCREEN_WIDTH - 80) / 2, (SCREEN_HEIGHT - 70) / 2, 80, 70);
+    }
+    //显示取消收藏
+    else {
+        view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"已取消收藏"]];
+        view.frame = CGRectMake((SCREEN_WIDTH - 100) / 2, (SCREEN_HEIGHT - 70) / 2, 100, 70);
+    }
+    [self.window addSubview:view];
+    //视图逐渐消失
+    [UIView animateWithDuration:3.0f animations:^{
+        view.alpha = 0.0f;
+    }];
 }
 
 #pragma mark - Lazy
@@ -113,9 +159,9 @@
     if (_likesButton == nil) {
         _likesButton = [[UIButton alloc] initWithFrame:CGRectMake(self.commentLab.right, 0, self.commentButton.width, self.returnButton.height)];
         [_likesButton setBackgroundImage:[UIImage imageNamed:@"点赞"] forState:UIControlStateNormal];
-        [_likesButton setBackgroundImage:[UIImage imageNamed:@"已点赞"] forState:UIControlStateSelected];
+        [_likesButton setBackgroundImage:[UIImage imageNamed:@"蓝色点赞"] forState:UIControlStateSelected];
         _likesButton.adjustsImageWhenHighlighted = NO;
-        [_likesButton addTarget:self action:@selector(checkLikesButtonClick) forControlEvents:UIControlEventTouchUpInside];
+        [_likesButton addTarget:self action:@selector(clickLikesButton) forControlEvents:UIControlEventTouchUpInside];
     }
     return _likesButton;
 }
@@ -132,9 +178,9 @@
     if (_collectionButton == nil) {
         _collectionButton = [[UIButton alloc] initWithFrame:CGRectMake(self.likesLab.right, 0, self.commentButton.width, self.returnButton.height)];
         [_collectionButton setBackgroundImage:[UIImage imageNamed:@"收藏"] forState:UIControlStateNormal];
-        [_collectionButton setBackgroundImage:[UIImage imageNamed:@"已收藏"] forState:UIControlStateSelected];
+        [_collectionButton setBackgroundImage:[UIImage imageNamed:@"蓝色收藏"] forState:UIControlStateSelected];
         _collectionButton.adjustsImageWhenHighlighted = NO;
-        [_collectionButton addTarget:self action:@selector(checkCollectionButtonClick) forControlEvents:UIControlEventTouchUpInside];
+        [_collectionButton addTarget:self action:@selector(clickCollectionButton) forControlEvents:UIControlEventTouchUpInside];
     }
     return _collectionButton;
 }

@@ -13,10 +13,8 @@ NSString *MainBottomTableViewHeaderViewReuseIdentifier = @"MainBottomTableViewHe
 
 @interface MainBottomTableViewHeaderView ()
 
-//日期文本框
-@property(nonatomic, strong) UILabel *dateLab;
-//水平分割线
-@property(nonatomic, strong) UIView *horizontalLine;
+@property(nonatomic, strong) UILabel *dateLab; //日期文本框
+@property(nonatomic, strong) UIView *horizontalLine; //水平分割线
 
 @end
 

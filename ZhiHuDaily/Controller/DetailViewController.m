@@ -20,7 +20,6 @@
 @interface DetailViewController ()
 
 @property(nonatomic, strong) WKWebView *webView;
-
 @property(nonatomic, strong) DetailBottomView *bottomView;
 
 @end

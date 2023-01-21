@@ -15,9 +15,7 @@ UIKIT_EXTERN NSString *MainBottomTableViewCellReuseIdentifier;
 @interface MainBottomTableViewCell : UITableViewCell
 
 @property(nonatomic, copy) NSData *imgData;
-
 @property(nonatomic, copy) NSString *title;
-
 @property(nonatomic, copy) NSString *author;
 
 @end

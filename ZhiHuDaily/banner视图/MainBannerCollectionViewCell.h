@@ -15,9 +15,7 @@ UIKIT_EXTERN NSString *MainBannerCollectionViewCellReuseIdentifier;
 @interface MainBannerCollectionViewCell : UICollectionViewCell
 
 @property(nonatomic, copy) NSData *imgData;
-
 @property(nonatomic, copy) NSString *title;
-
 @property(nonatomic, copy) NSString *author;
 
 @end
