@@ -8,6 +8,7 @@
 #import "MainViewController.h"
 
 #import "DetailViewController.h"
+#import "UserViewController.h"
 
 #import <Masonry.h>
 
@@ -28,7 +29,7 @@
     UITableViewDelegate
 >
 
-@property(nonatomic, strong) UIView *topView;
+@property(nonatomic, strong) MainTopView *topView;
 @property(nonatomic, strong) UICollectionView *collectionView;
 @property(nonatomic, strong) UITableView *tableView;
 
@@ -193,9 +194,16 @@
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
+#pragma mark - Method
+
+- (void)clickUserButton {
+    UserViewController *userVC = [[UserViewController alloc] init];
+    [self.navigationController pushViewController:userVC animated:YES];
+}
+
 #pragma mark - Lazy
 
-- (UIView *)topView {
+- (MainTopView *)topView {
     if (_topView == nil) {
         _topView = [[MainTopView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
         [self.view addSubview:_topView];
@@ -205,6 +213,8 @@
             make.left.mas_equalTo(0);
             make.width.mas_equalTo(SCREEN_WIDTH);
         }];
+        //点击头像进入用户信息页
+        [_topView.userButton addTarget:self action:@selector(clickUserButton) forControlEvents:UIControlEventTouchUpInside];
     }
     return _topView;
 }

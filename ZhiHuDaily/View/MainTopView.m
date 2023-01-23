@@ -27,6 +27,7 @@
         [self addSubview:self.monthLab];
         [self addSubview:self.verticalLine];
         [self addSubview:self.welcomeLab];
+        [self addSubview:self.userButton];
     }
     return self;
 }
@@ -104,6 +105,17 @@
         }
     }
   return _welcomeLab;
+}
+
+- (UIButton *)userButton {
+    if (_userButton == nil) {
+        _userButton = [[UIButton alloc] initWithFrame:CGRectMake(self.welcomeLab.right + 70, 10, 30, 30)];
+        [_userButton setBackgroundImage:[UIImage imageNamed:@"头像"] forState:UIControlStateNormal];
+        _userButton.layer.cornerRadius = _userButton.width / 2;
+        _userButton.layer.masksToBounds = YES;
+        _userButton.adjustsImageWhenHighlighted = NO;
+    }
+    return _userButton;
 }
 
 @end
