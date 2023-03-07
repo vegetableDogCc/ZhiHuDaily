@@ -14,29 +14,30 @@ SectionModelStoryPlace const SectionModelStoryPlaceBottom = @"stories";
 
 @implementation SectionModel
 
-+ (SectionModel *)place:(SectionModelStoryPlace)place obj:(NSDictionary *)responseObject {
-    NSMutableArray *ary = [NSMutableArray array];
-    //遍历字典中所有键为place的元素,并将各个元素赋值给story对象相对应的属性,后将对象添加到可变数组中
-    for (NSDictionary *dic in responseObject[place]) {
-        Stories *story = [[Stories alloc] initWithDictionary:dic];
-        [ary addObject:story];
-    }
-
-    SectionModel *model = [[SectionModel alloc] init];
-    //把字典中所有键为date的元素赋值给model的date
-    model.date = responseObject[@"date"];
-    //把创建的可变数组赋值给model的storyAry
-    model.storyAry = ary;
-    return model;
-}
-
 //最新新闻
 + (void)requestLatestSuccess:(void (^)(SectionModel * _Nonnull, SectionModelStoryPlace _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
     
     [[HttpRequest sharedTool] getWithURLString:@"news/latest" parameters:nil success:^(id  _Nonnull responseObject) {
         
-        SectionModel *bannerModel = [self place:SectionModelStoryPlaceBanner obj:responseObject];
-        SectionModel *bottomModel = [self place:SectionModelStoryPlaceBottom obj:responseObject];
+        NSMutableArray *ary1 = [NSMutableArray array];
+        for (NSDictionary *dic in responseObject[SectionModelStoryPlaceBanner]) {
+            BannerStories *bannerStory = [[BannerStories alloc] initWithDictionary:dic];
+            [ary1 addObject:bannerStory];
+        }
+        
+        NSMutableArray *ary2 = [NSMutableArray array];
+        for (NSDictionary *dic in responseObject[SectionModelStoryPlaceBottom]) {
+            Stories *story = [[Stories alloc] initWithDictionary:dic];
+            [ary2 addObject:story];
+        }
+        
+        SectionModel *bannerModel = [[SectionModel alloc] init];
+        SectionModel *bottomModel = [[SectionModel alloc] init];
+
+        bannerModel.date = responseObject[@"date"];
+        bannerModel.bannerAry = ary1;
+        bottomModel.storyAry = ary2;
+        
         if (success) {
             success(bannerModel, SectionModelStoryPlaceBanner);
             success(bottomModel, SectionModelStoryPlaceBottom);
@@ -55,7 +56,16 @@ SectionModelStoryPlace const SectionModelStoryPlaceBottom = @"stories";
     NSString *string = [NSString stringWithFormat:@"stories/before/%@", str];
     [[HttpRequest sharedTool] getWithURLString:string parameters:nil success:^(id  _Nonnull responseObject) {
         
-        SectionModel *bottomModel = [self place:SectionModelStoryPlaceBottom obj:responseObject];
+        NSMutableArray *ary = [NSMutableArray array];
+        for (NSDictionary *dic in responseObject[SectionModelStoryPlaceBottom]) {
+            Stories *story = [[Stories alloc] initWithDictionary:dic];
+            [ary addObject:story];
+        }
+        
+        SectionModel *bottomModel = [[SectionModel alloc] init];
+        bottomModel.date = responseObject[@"date"];
+        bottomModel.storyAry = ary;
+
         if (success) {
             success(bottomModel);
         }
@@ -74,12 +84,10 @@ SectionModelStoryPlace const SectionModelStoryPlaceBottom = @"stories";
     [[HttpRequest sharedTool] getWithURLString:string parameters:nil success:^(id  _Nonnull responseObject) {
         
         NSMutableArray *ary = [NSMutableArray array];
-        //将字典中的元素赋值给storyContent对象相对应的属性,后将对象添加到可变数组中
         StoriesContent *storyContent = [[StoriesContent alloc] initWithDictionary:responseObject];
         [ary addObject:storyContent];
 
         SectionModel *ContentModel = [[SectionModel alloc] init];
-        //把创建的可变数组赋值给model的storyAry
         ContentModel.storyContentAry = ary;
         
         if (success) {
@@ -95,16 +103,15 @@ SectionModelStoryPlace const SectionModelStoryPlaceBottom = @"stories";
 
 //互动情况
 + (void)requestInteractionWithId:(long)identifier success:(void (^)(SectionModel * _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
+    
     NSString *string = [NSString stringWithFormat:@"story-extra/%ld", identifier];
     [[HttpRequest sharedTool] getWithURLString:string parameters:nil success:^(id  _Nonnull responseObject) {
         
         NSMutableArray *ary = [NSMutableArray array];
-        //将字典中的元素赋值给storyContent对象相对应的属性,后将对象添加到可变数组中
         InteractionNumber *interactionNumber = [[InteractionNumber alloc] initWithDictionary:responseObject];
         [ary addObject:interactionNumber];
         
         SectionModel *interactionModel = [[SectionModel alloc] init];
-        //把创建的可变数组赋值给model的storyAry
         interactionModel.interactionAry = ary;
         
         if (success) {

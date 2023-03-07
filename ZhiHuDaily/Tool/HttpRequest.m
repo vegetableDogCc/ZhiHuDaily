@@ -38,9 +38,6 @@ static id _instance = nil;
     if (self) {
         //为AFHTTPSessionManager *manager赋值
         self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://news-at.zhihu.com/api/3"]];
-        //self.manager.requestSerializer
-        //AFJSONRequestSerializer
-        //AFHTTPRequestSerializer
     }
     return self;
 }

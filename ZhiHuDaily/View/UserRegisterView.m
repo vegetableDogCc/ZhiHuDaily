@@ -35,6 +35,7 @@
         [self addSubview:self.passwordImg];
         [self addSubview:self.passwordTextField];
         [self addSubview:self.loginButton];
+        [self addSubview:self.returnButton];
     }
     return self;
 }
@@ -110,6 +111,17 @@
         [_loginButton setBackgroundColor:[UIColor darkGrayColor]];
     }
     return _loginButton;
+}
+
+- (UIButton *)returnButton {
+    if (_returnButton == nil) {
+        _returnButton = [[UIButton alloc] initWithFrame:CGRectMake(350, 55, 20, 50)];
+        _returnButton.adjustsImageWhenHighlighted = NO;
+        [_returnButton setTitle:@"返回" forState:UIControlStateNormal];
+        [_returnButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        [_returnButton.titleLabel setNumberOfLines:2];
+    }
+    return _returnButton;
 }
 
 @end

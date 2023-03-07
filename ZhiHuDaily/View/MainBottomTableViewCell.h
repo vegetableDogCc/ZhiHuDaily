@@ -5,6 +5,7 @@
 //  Created by coin on 2023/1/9.
 //
 
+//主页新闻列表视图
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -14,9 +15,9 @@ UIKIT_EXTERN NSString *MainBottomTableViewCellReuseIdentifier;
 
 @interface MainBottomTableViewCell : UITableViewCell
 
-@property(nonatomic, copy) NSData *imgData;
-@property(nonatomic, copy) NSString *title;
-@property(nonatomic, copy) NSString *author;
+@property(nonatomic, copy) NSData *imgData; //图片data
+@property(nonatomic, copy) NSString *title; //文章标题字符串
+@property(nonatomic, copy) NSString *author; //作者字符串
 
 @end
 

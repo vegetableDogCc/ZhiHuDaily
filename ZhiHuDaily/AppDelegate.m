@@ -22,14 +22,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     //设置UIWindow的背景颜色
     self.window.backgroundColor = [UIColor whiteColor];
-    //创建homeVC
-    MainViewController *homeVC = [[MainViewController alloc] init];
-    //创建UINavigationController，将homeVC作为他的根视图
-    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    //创建mainVC
+    MainViewController *mainVC = [[MainViewController alloc] init];
+    //创建navVC
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:mainVC];
     //隐藏导航栏
     navVC.navigationBarHidden = YES;
-    //
-    navVC.interactivePopGestureRecognizer.delegate = nil;
     //设置rootViewController
     self.window.rootViewController = navVC;
     //让window成为keyWindow(主窗口),并且可见

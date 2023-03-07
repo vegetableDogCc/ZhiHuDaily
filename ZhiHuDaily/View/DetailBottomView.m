@@ -17,7 +17,6 @@
 @interface DetailBottomView ()
 
 @property(nonatomic, strong) UIToolbar *toolBar; //底部的工具栏
-@property(nonatomic, strong) UIButton *returnButton; //返回主页按钮
 @property(nonatomic, strong) UIView *verticalLine; //竖直分割线
 @property(nonatomic, strong) UIButton *commentButton; //评论按钮
 @property(nonatomic, strong) UILabel *commentLab; //评论数文本框

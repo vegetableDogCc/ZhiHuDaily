@@ -16,8 +16,9 @@
 #import <Masonry.h>
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
-@interface DetailViewController ()
+@interface DetailViewController () <WKNavigationDelegate>
 
 @property(nonatomic, strong) WKWebView *webView;
 @property(nonatomic, strong) DetailBottomView *bottomView;
@@ -28,6 +29,7 @@
 
 #pragma mark - Life Cycle
 
+//视图加载后
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -35,20 +37,31 @@
     [self.view addSubview:self.bottomView];
 }
 
+#pragma mark - WKNavigationDelegate
+
+// 页面加载后
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    //屏蔽最顶部打开知乎日报和最底部进入知乎
+    [webView evaluateJavaScript:@"document.getElementsByClassName('Daily')[0].remove();document.getElementsByClassName('view-more')[0].remove();" completionHandler:nil];
+}
+
+#pragma mark - Method
+
+//返回主页
+- (void)clickReturnButton {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark - Lazy
 
 - (WKWebView *)webView {
     if (_webView == nil) {
-        _webView = [[WKWebView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        _webView = [[WKWebView alloc] initWithFrame:
+                    CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 55)];
+        _webView.navigationDelegate = self;
         //展示新闻内容
-        [SectionModel requeatWithId:self.identifier success:^(SectionModel * _Nonnull model) {
-            NSURL *mUrl = [NSURL URLWithString:model.storyContentAry[0].url];
-            NSURLRequest *request = [NSURLRequest requestWithURL:mUrl];
-            [self->_webView loadRequest:request];
-            
-        } failure:^(NSError * _Nonnull error) {
-            NSLog(@"%@",error);
-        }];
+        NSURL *mUrl = [NSURL URLWithString:self.url];
+        [_webView loadRequest:[NSURLRequest requestWithURL:mUrl]];
     }
     return _webView;
 }
@@ -64,6 +77,8 @@
             make.left.mas_equalTo(0);
             make.width.mas_equalTo(SCREEN_WIDTH);
         }];
+        //点击返回
+        [_bottomView.returnButton addTarget:self action:@selector(clickReturnButton) forControlEvents:UIControlEventTouchUpInside];
         //展示互动数
         [SectionModel requestInteractionWithId:self.identifier success:^(SectionModel * _Nonnull model) {
             self->_bottomView.CommentCount = model.interactionAry[0].comments;

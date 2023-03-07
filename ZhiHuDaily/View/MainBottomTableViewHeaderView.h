@@ -5,6 +5,7 @@
 //  Created by coin on 2023/1/9.
 //
 
+//主页新闻列表间的每天日期视图
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -14,7 +15,7 @@ UIKIT_EXTERN NSString *MainBottomTableViewHeaderViewReuseIdentifier;
 
 @interface MainBottomTableViewHeaderView : UITableViewHeaderFooterView
 
-@property(nonatomic, copy) NSString *date;
+@property(nonatomic, copy) NSString *date; //每天日期字符串
 
 @end
 

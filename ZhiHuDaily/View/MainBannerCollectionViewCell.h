@@ -5,6 +5,7 @@
 //  Created by coin on 2023/1/1.
 //
 
+//主页banner视图
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -14,9 +15,9 @@ UIKIT_EXTERN NSString *MainBannerCollectionViewCellReuseIdentifier;
 
 @interface MainBannerCollectionViewCell : UICollectionViewCell
 
-@property(nonatomic, copy) NSData *imgData;
-@property(nonatomic, copy) NSString *title;
-@property(nonatomic, copy) NSString *author;
+@property(nonatomic, copy) NSData *imgData; //图片data
+@property(nonatomic, copy) NSString *title; //文章标题字符串
+@property(nonatomic, copy) NSString *author; //作者字符串
 
 @end
 

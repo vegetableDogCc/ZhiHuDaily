@@ -7,28 +7,75 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD1311080ACEF5A846F3B158 /* Pods_ZhiHuDaily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926905002D1BBA6F70E11B3B /* Pods_ZhiHuDaily.framework */; };
+		FC016B12297DA96400666731 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC016B11297DA96400666731 /* UserViewController.m */; };
+		FC072994297E9E700049BE8E /* UserInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC072993297E9E700049BE8E /* UserInformationView.m */; };
 		FC1009C8295721BE00A10E20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1009C7295721BE00A10E20 /* AppDelegate.m */; };
-		FC1009CB295721BE00A10E20 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1009CA295721BE00A10E20 /* SceneDelegate.m */; };
-		FC1009CE295721BE00A10E20 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1009CD295721BE00A10E20 /* ViewController.m */; };
-		FC1009D1295721BE00A10E20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1009CF295721BE00A10E20 /* Main.storyboard */; };
+		FC1009CE295721BE00A10E20 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1009CD295721BE00A10E20 /* MainViewController.m */; };
 		FC1009D3295721C000A10E20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1009D2295721C000A10E20 /* Assets.xcassets */; };
 		FC1009D6295721C000A10E20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1009D4295721C000A10E20 /* LaunchScreen.storyboard */; };
 		FC1009D9295721C000A10E20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1009D8295721C000A10E20 /* main.m */; };
+		FC1009E1295723EB00A10E20 /* SectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1009E0295723EB00A10E20 /* SectionModel.m */; };
+		FC14AF282963306E009CBCCD /* MainTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC14AF272963306E009CBCCD /* MainTopView.m */; };
+		FC1F7C6F297AF90600D33180 /* InteractionNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1F7C6E297AF90600D33180 /* InteractionNumber.m */; };
+		FC51C4FC2961D2940025ED80 /* MainBannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC51C4FB2961D2940025ED80 /* MainBannerCollectionViewCell.m */; };
+		FC6289442979953D0046BFEF /* DetailBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6289432979953D0046BFEF /* DetailBottomView.m */; };
+		FC73D0E1296C41630099B3CA /* MainBottomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC73D0E0296C41630099B3CA /* MainBottomTableViewCell.m */; };
+		FC73D0E4296C4D100099B3CA /* MainBottomTableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC73D0E3296C4D100099B3CA /* MainBottomTableViewHeaderView.m */; };
+		FC8840A3295C9A1A00EFE68F /* Stories.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8840A2295C9A1900EFE68F /* Stories.m */; };
+		FCA00C12297EDA1100F92FF7 /* UserRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA00C11297EDA1100F92FF7 /* UserRegisterView.m */; };
+		FCA8D4CD2975AEFD00C50F04 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA8D4CC2975AEFD00C50F04 /* DetailViewController.m */; };
+		FCA8D4D02975AFE800C50F04 /* StoriesContent.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA8D4CF2975AFE800C50F04 /* StoriesContent.m */; };
+		FCB772C229588AF600BD59CA /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB772C129588AF600BD59CA /* UIView+Frame.m */; };
+		FCC5A1582959A85000E8ADA6 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC5A1572959A85000E8ADA6 /* HttpRequest.m */; };
+		FCCDE38129B6DAF0006970D7 /* BannerStories.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCDE38029B6DAF0006970D7 /* BannerStories.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50A57D0DF9510763CA464014 /* Pods-ZhiHuDaily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuDaily.debug.xcconfig"; path = "Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily.debug.xcconfig"; sourceTree = "<group>"; };
+		52E3D064D4D0119F20BE0289 /* Pods-ZhiHuDaily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuDaily.release.xcconfig"; path = "Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily.release.xcconfig"; sourceTree = "<group>"; };
+		926905002D1BBA6F70E11B3B /* Pods_ZhiHuDaily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhiHuDaily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC016B10297DA96400666731 /* UserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		FC016B11297DA96400666731 /* UserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		FC072992297E9E700049BE8E /* UserInformationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInformationView.h; sourceTree = "<group>"; };
+		FC072993297E9E700049BE8E /* UserInformationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInformationView.m; sourceTree = "<group>"; };
 		FC1009C3295721BE00A10E20 /* ZhiHuDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHuDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC1009C6295721BE00A10E20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FC1009C7295721BE00A10E20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FC1009C9295721BE00A10E20 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		FC1009CA295721BE00A10E20 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		FC1009CC295721BE00A10E20 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FC1009CD295721BE00A10E20 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		FC1009D0295721BE00A10E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FC1009CC295721BE00A10E20 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		FC1009CD295721BE00A10E20 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		FC1009D2295721C000A10E20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC1009D5295721C000A10E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC1009D7295721C000A10E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC1009D8295721C000A10E20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FC1009DF295723EB00A10E20 /* SectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SectionModel.h; sourceTree = "<group>"; };
+		FC1009E0295723EB00A10E20 /* SectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SectionModel.m; sourceTree = "<group>"; };
+		FC14AF262963306E009CBCCD /* MainTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTopView.h; sourceTree = "<group>"; };
+		FC14AF272963306E009CBCCD /* MainTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTopView.m; sourceTree = "<group>"; };
+		FC1F7C6D297AF90600D33180 /* InteractionNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InteractionNumber.h; sourceTree = "<group>"; };
+		FC1F7C6E297AF90600D33180 /* InteractionNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InteractionNumber.m; sourceTree = "<group>"; };
+		FC51C4FA2961D2940025ED80 /* MainBannerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainBannerCollectionViewCell.h; sourceTree = "<group>"; };
+		FC51C4FB2961D2940025ED80 /* MainBannerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainBannerCollectionViewCell.m; sourceTree = "<group>"; };
+		FC6289422979953D0046BFEF /* DetailBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailBottomView.h; sourceTree = "<group>"; };
+		FC6289432979953D0046BFEF /* DetailBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailBottomView.m; sourceTree = "<group>"; };
+		FC73D0DF296C41630099B3CA /* MainBottomTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainBottomTableViewCell.h; sourceTree = "<group>"; };
+		FC73D0E0296C41630099B3CA /* MainBottomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainBottomTableViewCell.m; sourceTree = "<group>"; };
+		FC73D0E2296C4D100099B3CA /* MainBottomTableViewHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainBottomTableViewHeaderView.h; sourceTree = "<group>"; };
+		FC73D0E3296C4D100099B3CA /* MainBottomTableViewHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainBottomTableViewHeaderView.m; sourceTree = "<group>"; };
+		FC8840A1295C9A1900EFE68F /* Stories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stories.h; sourceTree = "<group>"; };
+		FC8840A2295C9A1900EFE68F /* Stories.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stories.m; sourceTree = "<group>"; };
+		FCA00C10297EDA1100F92FF7 /* UserRegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserRegisterView.h; sourceTree = "<group>"; };
+		FCA00C11297EDA1100F92FF7 /* UserRegisterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserRegisterView.m; sourceTree = "<group>"; };
+		FCA8D4CB2975AEFD00C50F04 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		FCA8D4CC2975AEFD00C50F04 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		FCA8D4CE2975AFE800C50F04 /* StoriesContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoriesContent.h; sourceTree = "<group>"; };
+		FCA8D4CF2975AFE800C50F04 /* StoriesContent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoriesContent.m; sourceTree = "<group>"; };
+		FCB772C029588AF600BD59CA /* UIView+Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		FCB772C129588AF600BD59CA /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		FCC5A1562959A85000E8ADA6 /* HttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
+		FCC5A1572959A85000E8ADA6 /* HttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpRequest.m; sourceTree = "<group>"; };
+		FCCDE37F29B6DAF0006970D7 /* BannerStories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerStories.h; sourceTree = "<group>"; };
+		FCCDE38029B6DAF0006970D7 /* BannerStories.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerStories.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,17 +83,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD1311080ACEF5A846F3B158 /* Pods_ZhiHuDaily.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B3B4A5469FF8CB88F2F35FE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50A57D0DF9510763CA464014 /* Pods-ZhiHuDaily.debug.xcconfig */,
+				52E3D064D4D0119F20BE0289 /* Pods-ZhiHuDaily.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B1145C7C42CC922D660C0B5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				926905002D1BBA6F70E11B3B /* Pods_ZhiHuDaily.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FC1009BA295721BE00A10E20 = {
 			isa = PBXGroup;
 			children = (
 				FC1009C5295721BE00A10E20 /* ZhiHuDaily */,
 				FC1009C4295721BE00A10E20 /* Products */,
+				2B3B4A5469FF8CB88F2F35FE /* Pods */,
+				B1145C7C42CC922D660C0B5E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,17 +130,78 @@
 			children = (
 				FC1009C6295721BE00A10E20 /* AppDelegate.h */,
 				FC1009C7295721BE00A10E20 /* AppDelegate.m */,
-				FC1009C9295721BE00A10E20 /* SceneDelegate.h */,
-				FC1009CA295721BE00A10E20 /* SceneDelegate.m */,
-				FC1009CC295721BE00A10E20 /* ViewController.h */,
-				FC1009CD295721BE00A10E20 /* ViewController.m */,
-				FC1009CF295721BE00A10E20 /* Main.storyboard */,
+				FCA8D4CA2975AE9700C50F04 /* Controller */,
+				FC8636FC296C6985006C01DE /* View */,
+				FC22B7CA2971D41F00841A64 /* Model */,
+				FC8636FF296C6A24006C01DE /* Tool */,
 				FC1009D2295721C000A10E20 /* Assets.xcassets */,
 				FC1009D4295721C000A10E20 /* LaunchScreen.storyboard */,
 				FC1009D7295721C000A10E20 /* Info.plist */,
 				FC1009D8295721C000A10E20 /* main.m */,
 			);
 			path = ZhiHuDaily;
+			sourceTree = "<group>";
+		};
+		FC22B7CA2971D41F00841A64 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC1009DF295723EB00A10E20 /* SectionModel.h */,
+				FC1009E0295723EB00A10E20 /* SectionModel.m */,
+				FCCDE37F29B6DAF0006970D7 /* BannerStories.h */,
+				FCCDE38029B6DAF0006970D7 /* BannerStories.m */,
+				FC8840A1295C9A1900EFE68F /* Stories.h */,
+				FC8840A2295C9A1900EFE68F /* Stories.m */,
+				FCA8D4CE2975AFE800C50F04 /* StoriesContent.h */,
+				FCA8D4CF2975AFE800C50F04 /* StoriesContent.m */,
+				FC1F7C6D297AF90600D33180 /* InteractionNumber.h */,
+				FC1F7C6E297AF90600D33180 /* InteractionNumber.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FC8636FC296C6985006C01DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FC14AF262963306E009CBCCD /* MainTopView.h */,
+				FC14AF272963306E009CBCCD /* MainTopView.m */,
+				FC51C4FA2961D2940025ED80 /* MainBannerCollectionViewCell.h */,
+				FC51C4FB2961D2940025ED80 /* MainBannerCollectionViewCell.m */,
+				FC73D0DF296C41630099B3CA /* MainBottomTableViewCell.h */,
+				FC73D0E0296C41630099B3CA /* MainBottomTableViewCell.m */,
+				FC73D0E2296C4D100099B3CA /* MainBottomTableViewHeaderView.h */,
+				FC73D0E3296C4D100099B3CA /* MainBottomTableViewHeaderView.m */,
+				FC6289422979953D0046BFEF /* DetailBottomView.h */,
+				FC6289432979953D0046BFEF /* DetailBottomView.m */,
+				FC072992297E9E700049BE8E /* UserInformationView.h */,
+				FC072993297E9E700049BE8E /* UserInformationView.m */,
+				FCA00C10297EDA1100F92FF7 /* UserRegisterView.h */,
+				FCA00C11297EDA1100F92FF7 /* UserRegisterView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC8636FF296C6A24006C01DE /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				FCC5A1562959A85000E8ADA6 /* HttpRequest.h */,
+				FCC5A1572959A85000E8ADA6 /* HttpRequest.m */,
+				FCB772C029588AF600BD59CA /* UIView+Frame.h */,
+				FCB772C129588AF600BD59CA /* UIView+Frame.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		FCA8D4CA2975AE9700C50F04 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FC1009CC295721BE00A10E20 /* MainViewController.h */,
+				FC1009CD295721BE00A10E20 /* MainViewController.m */,
+				FCA8D4CB2975AEFD00C50F04 /* DetailViewController.h */,
+				FCA8D4CC2975AEFD00C50F04 /* DetailViewController.m */,
+				FC016B10297DA96400666731 /* UserViewController.h */,
+				FC016B11297DA96400666731 /* UserViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +211,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC1009DC295721C000A10E20 /* Build configuration list for PBXNativeTarget "ZhiHuDaily" */;
 			buildPhases = (
+				C5C005066B9502A099DA5B8E /* [CP] Check Pods Manifest.lock */,
 				FC1009BF295721BE00A10E20 /* Sources */,
 				FC1009C0295721BE00A10E20 /* Frameworks */,
 				FC1009C1295721BE00A10E20 /* Resources */,
+				26EB1CCD2FF49074AE76870E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,35 +265,83 @@
 			files = (
 				FC1009D6295721C000A10E20 /* LaunchScreen.storyboard in Resources */,
 				FC1009D3295721C000A10E20 /* Assets.xcassets in Resources */,
-				FC1009D1295721BE00A10E20 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26EB1CCD2FF49074AE76870E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5C005066B9502A099DA5B8E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZhiHuDaily-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FC1009BF295721BE00A10E20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC1009CE295721BE00A10E20 /* ViewController.m in Sources */,
+				FC072994297E9E700049BE8E /* UserInformationView.m in Sources */,
+				FC1009CE295721BE00A10E20 /* MainViewController.m in Sources */,
 				FC1009C8295721BE00A10E20 /* AppDelegate.m in Sources */,
+				FC51C4FC2961D2940025ED80 /* MainBannerCollectionViewCell.m in Sources */,
 				FC1009D9295721C000A10E20 /* main.m in Sources */,
-				FC1009CB295721BE00A10E20 /* SceneDelegate.m in Sources */,
+				FCC5A1582959A85000E8ADA6 /* HttpRequest.m in Sources */,
+				FCB772C229588AF600BD59CA /* UIView+Frame.m in Sources */,
+				FC1F7C6F297AF90600D33180 /* InteractionNumber.m in Sources */,
+				FC14AF282963306E009CBCCD /* MainTopView.m in Sources */,
+				FCA8D4D02975AFE800C50F04 /* StoriesContent.m in Sources */,
+				FC8840A3295C9A1A00EFE68F /* Stories.m in Sources */,
+				FCCDE38129B6DAF0006970D7 /* BannerStories.m in Sources */,
+				FCA8D4CD2975AEFD00C50F04 /* DetailViewController.m in Sources */,
+				FC73D0E1296C41630099B3CA /* MainBottomTableViewCell.m in Sources */,
+				FC6289442979953D0046BFEF /* DetailBottomView.m in Sources */,
+				FC016B12297DA96400666731 /* UserViewController.m in Sources */,
+				FCA00C12297EDA1100F92FF7 /* UserRegisterView.m in Sources */,
+				FC73D0E4296C4D100099B3CA /* MainBottomTableViewHeaderView.m in Sources */,
+				FC1009E1295723EB00A10E20 /* SectionModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FC1009CF295721BE00A10E20 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC1009D0295721BE00A10E20 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FC1009D4295721C000A10E20 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,6 +467,7 @@
 		};
 		FC1009DD295721C000A10E20 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50A57D0DF9510763CA464014 /* Pods-ZhiHuDaily.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -297,11 +476,13 @@
 				DEVELOPMENT_TEAM = DZXCP28X2P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "知乎日报";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,6 +497,7 @@
 		};
 		FC1009DE295721C000A10E20 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52E3D064D4D0119F20BE0289 /* Pods-ZhiHuDaily.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -324,11 +506,13 @@
 				DEVELOPMENT_TEAM = DZXCP28X2P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "知乎日报";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

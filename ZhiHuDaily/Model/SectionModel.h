@@ -8,6 +8,7 @@
 //进行网络请求
 #import <Foundation/Foundation.h>
 
+#import "BannerStories.h"
 #import "Stories.h"
 #import "StoriesContent.h"
 #import "InteractionNumber.h"
@@ -23,9 +24,11 @@ FOUNDATION_EXPORT SectionModelStoryPlace const SectionModelStoryPlaceBottom;
 
 @interface SectionModel : NSObject
 
-//最新新闻及过往新闻的日期
+//请求到的banner新闻的数据
+@property(nonatomic, strong) NSArray <BannerStories *> *bannerAry;
+//新闻日期
 @property(nonatomic, copy) NSString *date;
-//最新新闻及过往新闻除日期以外的其他数据
+//列表新闻除日期以外的其他数据
 @property(nonatomic, strong) NSArray <Stories *> *storyAry;
 //请求到的新闻内容的数据
 @property(nonatomic, strong) NSArray <StoriesContent *> *storyContentAry;
