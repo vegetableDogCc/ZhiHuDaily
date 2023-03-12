@@ -14,7 +14,6 @@
 
 @interface UserInformationView ()
 
-@property(nonatomic, strong) UIImageView *backgroundImg; //背景图片
 @property(nonatomic, strong) UIImageView *userImg; //用户头像图片
 @property(nonatomic, strong) UILabel *nameLab; //昵称文本框
 @property(nonatomic, strong) UILabel *introductionLab; //个人简介文本框
@@ -26,29 +25,21 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self addSubview:self.backgroundImg];
         [self addSubview:self.userImg];
         [self addSubview:self.nameLab];
         [self addSubview:self.introductionLab];
         [self addSubview:self.exitButton];
         [self addSubview:self.returnButton];
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
 
 #pragma mark - Lazy
 
-- (UIImageView *)backgroundImg {
-    if (_backgroundImg == nil) {
-        _backgroundImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-        _backgroundImg.image = [UIImage imageNamed:@"背景"];
-    }
-    return _backgroundImg;
-}
-
 - (UIImageView *)userImg {
     if (_userImg == nil) {
-        _userImg = [[UIImageView alloc] initWithFrame:CGRectMake(25, 75, 80, 80)];
+        _userImg = [[UIImageView alloc] initWithFrame:CGRectMake(25, 105, 80, 80)];
         _userImg.image = [UIImage imageNamed:@"头像"];
         _userImg.layer.cornerRadius = _userImg.width / 2;
         _userImg.layer.masksToBounds = YES;
@@ -87,11 +78,9 @@
 
 - (UIButton *)returnButton {
     if (_returnButton == nil) {
-        _returnButton = [[UIButton alloc] initWithFrame:CGRectMake(350, 55, 20, 50)];
+        _returnButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 50, 50, 50)];
+        [_returnButton setBackgroundImage:[UIImage imageNamed:@"箭头"] forState:UIControlStateNormal];
         _returnButton.adjustsImageWhenHighlighted = NO;
-        [_returnButton setTitle:@"返回" forState:UIControlStateNormal];
-        [_returnButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-        [_returnButton.titleLabel setNumberOfLines:2];
     }
     return _returnButton;
 }

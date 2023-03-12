@@ -38,7 +38,9 @@
 }
 //展示用户信息视图
 - (void)clickLoginButton {
-    [self.view addSubview:self.informationView];
+    if ([self.registerView.agreeButton isSelected]) {
+        [self.view addSubview:self.informationView];
+    }
 }
 //返回主页
 - (void)clickReturnButton {
