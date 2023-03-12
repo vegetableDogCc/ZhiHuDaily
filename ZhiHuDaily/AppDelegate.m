@@ -1,10 +1,3 @@
-//
-//  AppDelegate.m
-//  ZhiHuDaily
-//
-//  Created by coin on 2022/12/24.
-//
-
 #import "AppDelegate.h"
 
 #import "MainViewController.h"

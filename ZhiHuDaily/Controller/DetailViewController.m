@@ -1,10 +1,3 @@
-//
-//  DetailViewController.m
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/17.
-//
-
 #import "DetailViewController.h"
 
 #import <WebKit/WebKit.h>

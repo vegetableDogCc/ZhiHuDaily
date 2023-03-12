@@ -1,10 +1,3 @@
-//
-//  SectionModel.h
-//  ZhiHuDaily
-//
-//  Created by coin on 2022/12/24.
-//
-
 //进行网络请求
 #import <Foundation/Foundation.h>
 

@@ -1,10 +1,3 @@
-//
-//  ViewController.m
-//  ZhiHuDaily
-//
-//  Created by coin on 2022/12/24.
-//
-
 #import "MainViewController.h"
 
 #import "DetailViewController.h"

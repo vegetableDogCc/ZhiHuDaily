@@ -1,10 +1,3 @@
-//
-//  TopView.h
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/2.
-//
-
 //主页顶部视图
 #import <UIKit/UIKit.h>
 

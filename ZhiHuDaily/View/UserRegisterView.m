@@ -1,10 +1,3 @@
-//
-//  UserrRgisterView.m
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/23.
-//
-
 #import "UserRegisterView.h"
 
 #import "UIView+Frame.h"

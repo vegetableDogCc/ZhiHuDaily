@@ -1,10 +1,3 @@
-//
-//  BannerStories.h
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/3/7.
-//
-
 //banner新闻字典转模型
 #import <Foundation/Foundation.h>
 

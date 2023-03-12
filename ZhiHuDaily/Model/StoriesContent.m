@@ -1,10 +1,3 @@
-//
-//  StoriesDetail.m
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/17.
-//
-
 #import "StoriesContent.h"
 
 @implementation StoriesContent

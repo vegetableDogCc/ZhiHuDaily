@@ -1,10 +1,3 @@
-//
-//  BottomTableViewCell.m
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/9.
-//
-
 #import "MainBottomTableViewCell.h"
 
 #import <Masonry.h>

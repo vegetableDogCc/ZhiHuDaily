@@ -1,10 +1,3 @@
-//
-//  StoriesDetail.h
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/17.
-//
-
 //新闻内容字典转模型
 #import <Foundation/Foundation.h>
 

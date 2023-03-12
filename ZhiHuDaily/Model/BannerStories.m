@@ -1,10 +1,3 @@
-//
-//  BannerStories.m
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/3/7.
-//
-
 #import "BannerStories.h"
 
 @implementation BannerStories

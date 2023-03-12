@@ -1,10 +1,3 @@
-//
-//  UserInformationView.m
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/23.
-//
-
 #import "UserInformationView.h"
 
 #import "UIView+Frame.h"

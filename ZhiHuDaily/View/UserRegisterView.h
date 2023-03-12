@@ -1,10 +1,3 @@
-//
-//  UserrRgisterView.h
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/23.
-//
-
 //用户页登录视图
 #import <UIKit/UIKit.h>
 

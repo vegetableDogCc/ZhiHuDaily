@@ -1,10 +1,3 @@
-//
-//  DetailViewController.h
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/17.
-//
-
 //新闻详情页Controller
 #import <UIKit/UIKit.h>
 

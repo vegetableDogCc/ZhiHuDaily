@@ -1,10 +1,3 @@
-//
-//  BannerCollectionViewCell.h
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/1.
-//
-
 //主页banner视图
 #import <UIKit/UIKit.h>
 

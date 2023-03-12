@@ -1,10 +1,3 @@
-//
-//  UserViewController.m
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/23.
-//
-
 #import "UserViewController.h"
 
 #import "UserInformationView.h"

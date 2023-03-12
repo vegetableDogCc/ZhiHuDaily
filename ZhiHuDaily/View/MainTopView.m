@@ -1,10 +1,3 @@
-//
-//  TopView.m
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/2.
-//
-
 #import "MainTopView.h"
 
 #import "UIView+Frame.h"

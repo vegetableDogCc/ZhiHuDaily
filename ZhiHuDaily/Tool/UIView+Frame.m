@@ -1,10 +1,3 @@
-//
-//  UIView+Frame.m
-//  ZhiHuDaily
-//
-//  Created by coin on 2022/12/25.
-//
-
 #import "UIView+Frame.h"
 
 @implementation UIView (Frame)

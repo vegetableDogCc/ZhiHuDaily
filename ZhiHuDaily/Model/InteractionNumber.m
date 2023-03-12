@@ -1,10 +1,3 @@
-//
-//  InteractionNumber.m
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/21.
-//
-
 #import "InteractionNumber.h"
 
 @implementation InteractionNumber

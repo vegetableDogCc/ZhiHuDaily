@@ -1,10 +1,3 @@
-//
-//  HttpRequest.m
-//  ZhiHuDaily
-//
-//  Created by coin on 2022/12/26.
-//
-
 #import "HttpRequest.h"
 
 #import <AFNetworking/AFNetworking.h>

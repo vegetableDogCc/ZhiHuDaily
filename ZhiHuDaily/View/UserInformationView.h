@@ -1,10 +1,3 @@
-//
-//  UserInformationView.h
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/23.
-//
-
 //用户页用户信息视图
 #import <UIKit/UIKit.h>
 

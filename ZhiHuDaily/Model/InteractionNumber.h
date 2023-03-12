@@ -1,10 +1,3 @@
-//
-//  InteractionNumber.h
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/21.
-//
-
 //点赞评论数字典转模型
 #import <Foundation/Foundation.h>
 

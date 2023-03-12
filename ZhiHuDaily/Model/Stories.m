@@ -1,10 +1,3 @@
-//
-//  Story.m
-//  ZhiHuDaily
-//
-//  Created by coin on 2022/12/28.
-//
-
 #import "Stories.h"
 
 @implementation Stories

@@ -1,10 +1,3 @@
-//
-//  BottomTableViewCell.h
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/9.
-//
-
 //主页新闻列表视图
 #import <UIKit/UIKit.h>
 

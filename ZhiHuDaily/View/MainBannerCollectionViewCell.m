@@ -1,10 +1,3 @@
-//
-//  BannerCollectionViewCell.m
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/1.
-//
-
 #import "MainBannerCollectionViewCell.h"
 
 #import <Masonry.h>

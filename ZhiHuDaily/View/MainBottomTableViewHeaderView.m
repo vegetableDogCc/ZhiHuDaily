@@ -1,10 +1,3 @@
-//
-//  BottomTableViewHeaderView.m
-//  ZhiHuDaily
-//
-//  Created by coin on 2023/1/9.
-//
-
 #import "MainBottomTableViewHeaderView.h"
 
 #import <Masonry.h>
